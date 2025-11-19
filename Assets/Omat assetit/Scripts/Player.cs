@@ -6,6 +6,12 @@ public class Player : MonoBehaviour{
 
     void Update()
     {
+
+        if(GameManager.Instance.Phase != RacePhase.Racing)
+        {
+            return;
+        }
+
         float move = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float turn = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
         //Debug.Log(move);

@@ -11,7 +11,10 @@ public class AICar : MonoBehaviour
     void Update()
     {
 
+        if(GameManager.Instance.Phase != RacePhase.Racing)
+        {
 
+        }
         Transform target = waypoints[currentWaypointIndex];
 
         Vector3 targetXZ = new Vector3(target.position.x, transform.position.y, target.position.z);
