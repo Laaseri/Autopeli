@@ -1,13 +1,10 @@
-
+using UnityEngine;
 public enum RacePhase{Countdown, Racing, Finished}
 
 public class GameManager : MonoBehaviour
-
-
-
 {
-    public static GameManager Instance {get; private; set; }
-    public RacePhase Phase{ get; get; } = RacePhase.Countdown;
+    public static GameManager Instance {get; private set; }
+    public RacePhase Phase{ get; set; } = RacePhase.Countdown;
 
     void Awake()
     {
@@ -17,6 +14,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this; 
-        DontDestroyOnLoad(gameObject)
+        DontDestroyOnLoad(gameObject);
     }
 }
