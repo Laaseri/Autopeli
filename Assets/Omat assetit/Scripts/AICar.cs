@@ -13,7 +13,7 @@ public class AICar : MonoBehaviour
 
         if(GameManager.Instance.Phase != RacePhase.Racing)
         {
-
+            return;
         }
         Transform target = waypoints[currentWaypointIndex];
 

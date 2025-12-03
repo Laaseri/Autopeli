@@ -1,10 +1,18 @@
 using UnityEditor.Rendering.BuiltIn.ShaderGraph;
 using UnityEngine;
+using TMPro;
 
 public class Referee : MonoBehaviour
 
 {
+
+    public TMP_Text resultText;
     private bool winnerDeclared = false;
+    private void Start()
+    {
+        resultText.text = "";
+    }
+
     private void OnTriggerEnter(Collider car)
     {
         CarIdentify id = car.GetComponent<CarIdentify>();
@@ -27,7 +35,8 @@ public class Referee : MonoBehaviour
         if(winnerDeclared == false)
         {
             winnerDeclared = true;
-            Debug.Log($"WINNER: {winnerName}");    
+            resultText.text = $"WINNER: {winnerName}";
+            //Debug.Log($"WINNER: {winnerName}");    
         }
         
     }
